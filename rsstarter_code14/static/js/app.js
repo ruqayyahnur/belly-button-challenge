@@ -124,5 +124,14 @@ function bubbleChart(sample) {
     });
 };
 
+function optionChange(value) { 
+    console.log(value); 
+
+    buildMetadata(value);
+    buildBarChart(value);
+    buildBubbleChart(value);
+    buildGaugeChart(value);
+};
+
 // Call the initialize function
 init();
