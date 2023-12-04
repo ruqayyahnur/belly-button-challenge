@@ -9,6 +9,8 @@ d3.json(url).then(function(data) {
 function init() {
     // Use D3 to select the dropdown menu
     let dropdownMenu = d3.select("#selDataset");
+    
+    
     // Use D3 to get sample names and populate the drop-down selector
     d3.json(url).then((data) => {
         let names = data.names;
@@ -16,8 +18,8 @@ function init() {
             console.log(id);
 
             dropdownMenu.append("option")
-            .text(id)
-            .property("value",id);
+                        .text(id)
+                        .property("value",id);
         });
 
         let sample_one = names[0];
@@ -128,9 +130,8 @@ function optionChange(value) {
     console.log(value); 
 
     buildMetadata(value);
-    buildBarChart(value);
-    buildBubbleChart(value);
-    buildGaugeChart(value);
+    barChart(value);
+    bubbleChart(value);
 };
 
 // Call the initialize function
